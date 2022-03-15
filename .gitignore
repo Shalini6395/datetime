@@ -1,0 +1,25 @@
+date_val="20230430"
+obvs={}
+obvs['year'] = int(date_val[:4])
+obvs['month'] = int(date_val[4:6])
+obvs['day'] = int(date_val[6:8])
+#month_with_31_days=[1,3,5,7,8,10,12]
+#month_with_30_days=[4,6,9,11]
+if obvs['month']==2 and obvs['day'] in range(1,30) and obvs['year'] in range(1000,3001):
+    if (( obvs['year']%400 == 0)or (( obvs['year']%4 == 0 ) and ( obvs['year']%100 != 0))):
+        date1=str(obvs['year'])+"/"+str(obvs['month'])+"/"+str(obvs['day'])
+        print(date1)
+    elif obvs['month']==2 and obvs['day'] in range(1,29) and obvs['year'] in range(1000,3001):
+        date1=str(obvs['year'])+"/"+str(obvs['month'])+"/"+str(obvs['day'])
+        print(date1)  
+    else:
+        print("Invalid date")
+elif obvs['day'] in range(1,32) and obvs['month'] in range(1,13) and obvs['year'] in range(1000,3001):
+    if obvs['month'] in [1,3,5,7,8,10,12] and obvs['day'] in range(1,32):
+        date1=str(obvs['year'])+"/"+str(obvs['month'])+"/"+str(obvs['day'])
+        print(date1)
+    elif obvs['month'] in [4,6,9,11] and obvs['day'] in range(1,31):
+        date1=str(obvs['year'])+"/"+str(obvs['month'])+"/"+str(obvs['day'])
+        print(date1)
+    else:
+        print("Invalid date")
